@@ -23,7 +23,7 @@ var Queue = function() {
         previous: undefined
       };
     }
-
+    someInstance.count++;
   };
 
   someInstance.dequeue = function() {
@@ -40,6 +40,7 @@ var Queue = function() {
       let currentValue = storage.value;
       storage = storage.previous;
       storage.next = undefined;
+      someInstance.count--;
       return currentValue;
     }
   };
